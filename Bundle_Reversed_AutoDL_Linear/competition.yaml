@@ -1,6 +1,6 @@
 title: AutoDL Self Service for Covid-19 Datasets (LINEAR)
 description: Here you can submit datasets to Deep Wisdom (winner of AutoDL challenge)
-competition_docker_image: evariste/autodl:gpu-latest
+competition_docker_image: evariste/autodl:cpu-latest
 image: logo.png
 has_registration: false
 html:
@@ -43,8 +43,8 @@ leaderboard:
         rank: 1
       numeric_format: 2
       rank: 7
-    set1_score:
-      label: Prediction score
+    score:
+      label: ALC score
       leaderboard: *id001
       numeric_format: 4
       rank: 2
