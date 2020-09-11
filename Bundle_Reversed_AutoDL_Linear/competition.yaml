@@ -1,0 +1,52 @@
+title: AutoDL Self Service for Covid-19 Datasets (LINEAR)
+description: Here you can submit datasets to Deep Wisdom (winner of AutoDL challenge)
+competition_docker_image: evariste/autodl:gpu-latest
+image: logo.png
+has_registration: false
+html:
+  credits: credits.html
+  evaluation: evaluation.html
+  get_starting_kit: get_starting_kit.html
+  help: help.html
+  overview: overview.html
+  terms: terms.html
+  data: data.html
+
+# Phases
+phases:
+  # Single Phase
+  1:
+    color: green
+    description: 'Submit datasets to Deep Wisdom'
+    execution_time_limit: 500
+    ingestion_program: AutoCovid_ingestion_program.zip
+    input_data: model.zip
+    is_scoring_only: false
+    label: DeepWisdom
+    max_submissions: 100
+    max_submissions_per_day: 15
+    phasenumber: 1
+    public_data: model.zip
+    reference_data: reference.zip
+    scoring_program: AutoCovid_scoring_program.zip
+    start_date: 2020-01-15 18:53:00+00:00 # YYYY-MM-DD
+show_datasets_from_yaml: true
+title: AutoCovid
+
+# Leaderboard
+leaderboard:
+  columns:
+    Duration:
+      label: Duration
+      leaderboard: &id001
+        label: Results
+        rank: 1
+      numeric_format: 2
+      rank: 7
+    set1_score:
+      label: Prediction score
+      leaderboard: *id001
+      numeric_format: 4
+      rank: 2
+  leaderboards:
+    Results: *id001
